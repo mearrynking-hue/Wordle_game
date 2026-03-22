@@ -82,7 +82,7 @@ public partial class MainWindow : Window
             }
     }
 
-    // Method which works when you click on the button
+    //checking letters which was inputted
     private void CheckButton_Click(object sender, RoutedEventArgs e)
     {
         string guess = InputBox.Text.ToUpper();
@@ -104,6 +104,7 @@ public partial class MainWindow : Window
 
             txt.Text = guess[i].ToString();
 
+            //colouring letters
             if(guess[i] == secretWord[i])
             {
                 card.Background = Brushes.Green;
@@ -121,9 +122,20 @@ public partial class MainWindow : Window
             }
         }
 
+        //check if player won, lost or still guessing
         if(guess == secretWord)
         {
-            MessageBox.Show("Congradulations! You won!");
+            EndMessage.Text = "You Won!";
+            EndMessage.Foreground = Brushes.Gold;
+            EndMessage.Visibility = Visibility.Visible;
+            CheckButton.IsEnabled = false;
+            return;
+        }
+        else if(currentAttempt >=5 )
+        {
+            EndMessage.Text = $"You lost!\nSecret word was {secretWord}";
+            EndMessage.Foreground = Brushes.OrangeRed;
+            EndMessage.Visibility = Visibility.Visible;
             CheckButton.IsEnabled = false;
         }
         else

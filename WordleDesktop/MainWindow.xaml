@@ -14,15 +14,9 @@
                         <TextBlock Text="" Foreground="White" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                 </UniformGrid>
-
-                <TextBox x:Name="InputBox" 
-                Opacity="0" 
-                Height="0"
-                MaxLength="5" 
-                TextChanged="InputBox_TextChanged"
-                KeyDown="InputBox_KeyDown"/>
+                <TextBox x:Name="InputBox" Opacity="0" Height="0" MaxLength="5" TextChanged="InputBox_TextChanged" KeyDown="InputBox_KeyDown"/>
                 <Button x:Name="CheckButton" Content="CHECK WORD" Width="150" Height="40" Click="CheckButton_Click"/>
         </StackPanel>
-        
+        <TextBlock x:Name="EndMessage" Text="" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Visibility="Collapsed" Panel.ZIndex="10" Foreground="White" Background="#80000000" Padding="20"/>
     </Grid>
 </Window>
