@@ -10,6 +10,25 @@ class WordleProgram
         Console.WriteLine("==================\nWELCOME TO WORDLE\n==================");
         Console.WriteLine($"[DEBUG] Hidden word is: {secretWord}");
         Console.WriteLine("I thought of a 5-letter word. Can you guess it?");
+
+        for (int i=1; i<=6; i++)
+        {
+            Console.WriteLine($"Attempt {i} of 6: ");
+            string guess = Console.ReadLine()?.ToUpper();
+
+            if (guess.Length<5 || guess.Length>5)
+            {
+                Console.WriteLine("Error: your guess must be no shorter or longer than 5 letters!");
+                i--;
+                continue;
+            }
+
+            if (guess == secretWord)
+            {
+                Console.WriteLine($"You guessed it right! The secret word was {secretWord}!");
+                break;
+            }
+        }
     }
 
     static string RandomWord(string filePath)
@@ -31,6 +50,4 @@ class WordleProgram
 
         return words[index].Trim().ToUpper();
     }
-
-
 }
