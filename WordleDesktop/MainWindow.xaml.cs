@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WorldDesktop;
 
@@ -23,6 +24,8 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         CreateGrid();
+        secretWord = GetRandomWord();
+        this.Title = "Wordle answer: " + secretWord; //DEBUG
         InputBox.Focus();
     }
     
@@ -144,5 +147,27 @@ public partial class MainWindow : Window
     {
         base.OnPreviewMouseDown(e);
         InputBox.Focus();
+    }
+
+    //getting random word from the list
+    private string GetRandomWord()
+    {
+        try
+        {
+            if(!File.Exists("words.txt"))
+            {
+                MessageBox.Show("File wasn't find! Default word will be used!");
+                return "RAVEN";
+            }
+
+            string[] words = File.ReadAllLines("words.txt");
+
+            Random rnd = new Random();
+            return words[rnd.Next(words.Length)].ToUpper().Trim();
+        }
+        catch
+        {
+            return "RAVEN";
+        }
     }
 }

@@ -23,5 +23,6 @@
                 KeyDown="InputBox_KeyDown"/>
                 <Button x:Name="CheckButton" Content="CHECK WORD" Width="150" Height="40" Click="CheckButton_Click"/>
         </StackPanel>
+        
     </Grid>
 </Window>
