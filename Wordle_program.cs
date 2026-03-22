@@ -13,15 +13,18 @@ class WordleProgram
 
         while(keepPlaying)
         {
+            //getting random word from the list
             string secretWord = RandomWord("words.txt");
             Console.WriteLine($"[DEBUG] Hidden word is: {secretWord}");
             Console.WriteLine("I thought of a 5-letter word. Can you guess it?");
 
+            //loop for checking letters in the answeers
             for (int i=1; i<=6; i++)
             {
                 Console.WriteLine($"Attempt {i} of 6: ");
                 string guess = (Console.ReadLine() ?? "").ToUpper();
 
+                //check number of letters in the answer
                 if (guess.Length<5 || guess.Length>5)
                 {
                     Console.WriteLine("Error: your guess must be no shorter or longer than 5 letters!");
@@ -29,6 +32,7 @@ class WordleProgram
                     continue;
                 }
 
+                //check if answer is a secret word
                 if (guess == secretWord)
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
@@ -38,19 +42,22 @@ class WordleProgram
                     break;
                 }
 
+                //check if letter in the answer on the right place or in the answer, but on the wrong place
                 for(int j=0; j<5; j++)
                 {
+                    //if letter on the right place
                     if (guess[j] == secretWord[j])
-                    {
-                        //if letter on the right place
+                    {   
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.Write(guess[j]);
                     }
+                    //if letter on the wron place
                     else if (secretWord.Contains(guess[j]))
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.Write(guess[j]);
                     }
+                    //if letter not in the secret word
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Gray;
@@ -60,8 +67,9 @@ class WordleProgram
 
                 Console.ResetColor();
                 Console.WriteLine();
-        }
+            }
 
+            //check if player has won
             if (!hasWon)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -70,6 +78,7 @@ class WordleProgram
                 Console.ResetColor();
             }
 
+            //asking player if they want to continue
             Console.WriteLine("Do you want to play again? (Y/N): ");
             string answer = Console.ReadLine()?.ToUpper() ?? "";
 
@@ -95,6 +104,7 @@ class WordleProgram
         //if file is empty, then we return default word
         if(words.Length == 0) return "RAVEN";
 
+        //if file is not empty, then get a random word
         Random rand = new Random();
         int index = rand.Next(words.Length);
 
