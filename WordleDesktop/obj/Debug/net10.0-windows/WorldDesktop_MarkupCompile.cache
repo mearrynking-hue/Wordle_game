@@ -1,5 +1,5 @@
 ﻿WorldDesktop
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_O
 C:\Users\linus\projects\c#\Wordle\WordleDesktop\App.xaml
 11407045341
 
-6-314402732
+42546821
 206-81868862
 MainWindow.xaml;
 
-True
+False
 
