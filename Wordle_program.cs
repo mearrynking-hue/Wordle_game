@@ -1,18 +1,5 @@
 using System;
-using System.ComponentModel.Design.Serialization;
-using System.Data;
-using System.Data.Common;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Net.Http.Headers;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.Marshalling;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Json;
-using System.Runtime.Versioning;
 
 class WordleProgram
 {
@@ -23,6 +10,8 @@ class WordleProgram
         Console.WriteLine("==================\nWELCOME TO WORDLE\n==================");
         Console.WriteLine($"[DEBUG] Hidden word is: {secretWord}");
         Console.WriteLine("I thought of a 5-letter word. Can you guess it?");
+
+        bool hasWon = false;
 
         for (int i=1; i<=6; i++)
         {
@@ -38,7 +27,10 @@ class WordleProgram
 
             if (guess == secretWord)
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine($"You guessed it right! The secret word was {secretWord}!");
+                hasWon = true;
+                Console.ResetColor();
                 break;
             }
 
@@ -64,6 +56,14 @@ class WordleProgram
 
             Console.ResetColor();
             Console.WriteLine();
+        }
+
+        if (!hasWon)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\nGame over! You've run out of attemts!");
+            Console.WriteLine($"The secret word was {secretWord}");
+            Console.ResetColor();
         }
     }
 
