@@ -1,0 +1,15 @@
+C:\Users\linus\projects\c#\Wordle\bin\Debug\net10.0\Wordle.exe
+C:\Users\linus\projects\c#\Wordle\bin\Debug\net10.0\Wordle.deps.json
+C:\Users\linus\projects\c#\Wordle\bin\Debug\net10.0\Wordle.runtimeconfig.json
+C:\Users\linus\projects\c#\Wordle\bin\Debug\net10.0\Wordle.dll
+C:\Users\linus\projects\c#\Wordle\bin\Debug\net10.0\Wordle.pdb
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\Wordle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\Wordle.AssemblyInfoInputs.cache
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\Wordle.AssemblyInfo.cs
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\Wordle.csproj.CoreCompileInputs.cache
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\Wordle.sourcelink.json
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\Wordle.dll
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\refint\Wordle.dll
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\Wordle.pdb
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\Wordle.genruntimeconfig.cache
+C:\Users\linus\projects\c#\Wordle\obj\Debug\net10.0\ref\Wordle.dll
