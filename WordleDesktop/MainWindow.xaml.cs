@@ -19,9 +19,38 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        CreateGrid();
     }
     
-    // Mether which works when you click on the button
+    //Method to create grid for letters
+    private void CreateGrid()
+    {
+        GameGrid.Children.Clear();
+        for(int i=0; i<30; i++)
+        {
+            Border card = new Border
+            {
+                BorderBrush = new SolidColorBrush(Color.FromRgb(58,58,60)),
+                BorderThickness = new Thickness(2),
+                Margin = new Thickness(3),
+                Background = new SolidColorBrush(Color.FromRgb(18,18,19))
+            };
+
+            card.Child = new TextBlock
+            {
+                Text = "",
+                Foreground = Brushes.White,
+                FontSize = 30,
+                FontWeight = FontWeights.Bold,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center
+            };
+
+            GameGrid.Children.Add(card);
+        }
+    }
+
+    // Method which works when you click on the button
     private void CheckButton_Click(object sender, RoutedEventArgs e)
     {
         string guess = InputBox.Text.ToUpper();
@@ -33,8 +62,6 @@ public partial class MainWindow : Window
             return;
         }
 
-        MessageBox.Show($"You typed in: {guess}");
-        
         InputBox.Clear();
     }
 }
